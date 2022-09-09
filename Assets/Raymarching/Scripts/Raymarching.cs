@@ -336,7 +336,7 @@ public class Raymarching : MonoBehaviour
         Shader.SetGlobalTexture("_NoiseCubemap", Resources.Load<Cubemap>("Textures/HashCubemap"));
         Shader.SetGlobalTexture("_Hash3DTxt", Resources.Load<Texture3D>("Textures/Hash3DTxt"));
         Shader.SetGlobalTexture("_Perlin3DTxt", Resources.Load<Texture3D>("Textures/Perlin3DTxt"));
-        VROn = (PlayerSettings.virtualRealitySupported && UnityEngine.XR.XRDevice.isPresent);
+        VROn = (PlayerSettings.virtualRealitySupported);
         if (VROn) PlayerSettings.stereoRenderingPath = StereoRenderingPath.SinglePass;
     }
 

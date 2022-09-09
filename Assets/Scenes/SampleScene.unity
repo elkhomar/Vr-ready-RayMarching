@@ -38,24 +38,23 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16883233, g: 0.20018366, b: 0.23352, a: 1}
+  m_IndirectSpecularColor: {r: 0.16883266, g: 0.20018406, b: 0.2335203, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 10
     m_AtlasSize: 512
@@ -63,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -77,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 256
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -88,9 +94,11 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 1047858709}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -110,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -117,7 +127,8 @@ NavMeshSettings:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 170076735}
@@ -133,15 +144,18 @@ GameObject:
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170076733}
   m_Enabled: 1
-  serializedVersion: 8
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -151,6 +165,24 @@ Light:
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -158,23 +190,29 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &170076735
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170076733}
   m_LocalRotation: {x: 0.06914905, y: 0.358682, z: -0.026654664, w: 0.9305134}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -183,15 +221,17 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669908}
   - component: {fileID: 534669907}
-  - component: {fileID: 534669906}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669909}
+  - component: {fileID: 534669910}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -203,20 +243,24 @@ GameObject:
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
 --- !u!20 &534669904
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 1, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -250,146 +294,23 @@ Camera:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.23672895, y: -0.1958883, z: 0.04879399, w: 0.95037174}
   m_LocalPosition: {x: 12.690346, y: 15.791936, z: -30.244556}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 17.16, y: 0, z: 0}
---- !u!114 &534669906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe9d7cb1ff04cb4ebfdc5419755e800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minDist: 0.0005
-  maxSteps: 853
-  maxDist: 296
-  eyeResolution: 1
-  computedW: 627
-  computedH: 550
-  dithering: 0
-  heatMap: 0
-  stereoSeparationFactor: 1
-  cubemap: {fileID: 0}
-  diffuseMapArray: {fileID: 0}
-  alpha: 1
-  fogColor: {r: 0, g: 0, b: 0, a: 1}
-  fogStrength: 1
-  zTest: 1
-  zTestSmooth: 2.84
-  lt: 0
-  lightPow: 1
-  pointLightTransform: {fileID: 0}
-  doShadow: 1
-  shadowMaxSteps: 13
-  shadowMaxDist: 50
-  shadowtMin: 0.1
-  shadowSmooth: 1
-  shadowStr: 1
-  shadowColor: {r: 0, g: 0, b: 0, a: 0}
-  distGlowNear: 0
-  distGlowFar: 6.89
-  distGlowStr: 0
-  normalsWarning: 000000
-  computeNormals0: 1
-  diffuseMap0: {fileID: 0}
-  useAlgoColorDiffuse0: 0
-  diffuseColor0: {r: 1, g: 1, b: 1, a: 0}
-  kD0: 0
-  emission0: 1
-  specColor0: {r: 1, g: 1, b: 1, a: 0}
-  kS0: 2.57
-  roughness0: 1
-  kRef0: 0
-  fresnelColor0: {r: 1, g: 1, b: 1, a: 0}
-  fPow0: 7.22
-  kF0: 0
-  doGlow0: 1
-  glowColor0: {r: 1, g: 0.83467245, b: 0.6367924, a: 0}
-  glowCoef0: 6.02
-  glowRemap0: 0.4
-  useAlgoColorGlow0: 1
-  doAoSSS0: 1
-  aoSSSMode0: 3
-  aoSSSSteps0: 10
-  aoSSSDelta0: 3.56
-  aoSSSCoef0: 1
-  aoSSSRemap0: 0.29
-  aoSSSColor0: {r: 0.3207547, g: 0.1547921, b: 0, a: 0}
-  computeNormals1: 0
-  diffuseMap1: {fileID: 0}
-  useAlgoColorDiffuse1: 0
-  diffuseColor1: {r: 0, g: 0, b: 0, a: 0}
-  kD1: 0
-  emission1: 0
-  specColor1: {r: 0, g: 0, b: 0, a: 0}
-  kS1: 0
-  roughness1: 0
-  kRef1: 0
-  fresnelColor1: {r: 0, g: 0, b: 0, a: 0}
-  fPow1: 0
-  kF1: 0
-  doGlow1: 0
-  glowColor1: {r: 0, g: 0, b: 0, a: 0}
-  glowCoef1: 0
-  glowRemap1: 0
-  useAlgoColorGlow1: 0
-  doAoSSS1: 0
-  aoSSSMode1: 0
-  aoSSSSteps1: 0
-  aoSSSDelta1: 0
-  aoSSSCoef1: 0
-  aoSSSRemap1: 0
-  aoSSSColor1: {r: 0, g: 0, b: 0, a: 0}
-  computeNormals2: 0
-  diffuseMap2: {fileID: 0}
-  useAlgoColorDiffuse2: 0
-  diffuseColor2: {r: 0, g: 0, b: 0, a: 0}
-  kD2: 0
-  emission2: 0
-  specColor2: {r: 0, g: 0, b: 0, a: 0}
-  kS2: 0
-  roughness2: 0
-  kRef2: 0
-  fresnelColor2: {r: 0, g: 0, b: 0, a: 0}
-  fPow2: 0
-  kF2: 0
-  doGlow2: 0
-  glowColor2: {r: 0, g: 0, b: 0, a: 0}
-  glowCoef2: 0
-  glowRemap2: 0
-  useAlgoColorGlow2: 0
-  doAoSSS2: 0
-  aoSSSMode2: 0
-  aoSSSSteps2: 0
-  aoSSSDelta2: 0
-  aoSSSCoef2: 0
-  aoSSSRemap2: 0
-  aoSSSColor2: {r: 0, g: 0, b: 0, a: 0}
-  algoColor0: {r: 0.4666667, g: 0.47301295, b: 1, a: 0}
-  algoColor1: {r: 1, g: 0.9916863, b: 0.4669811, a: 0}
-  algoColor2: {r: 0, g: 0, b: 0, a: 0}
-  algoColor3: {r: 0, g: 0, b: 0, a: 0}
-  algoFloat0: 1.5
-  algoFloat1: 0
-  algoFloat2: 0
-  algoFloat3: 0
-  mi: 1
-  nearClip: 2
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -405,7 +326,8 @@ MonoBehaviour:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -460,11 +382,266 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &534669909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe9d7cb1ff04cb4ebfdc5419755e800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDist: 0.0005
+  maxSteps: 100
+  maxDist: 50
+  eyeResolution: 1
+  computedW: 1162
+  computedH: 518
+  dithering: 1
+  heatMap: 0
+  stereoSeparationFactor: 1
+  cubemap: {fileID: 0}
+  diffuseMapArray: {fileID: 0}
+  alpha: 0.402
+  fogColor: {r: 0, g: 0, b: 0, a: 1}
+  fogStrength: 0
+  zTest: 0
+  zTestSmooth: 10
+  lt: 0
+  lightPow: 1
+  pointLightTransform: {fileID: 0}
+  doShadow: 1
+  shadowMaxSteps: 13
+  shadowMaxDist: 25
+  shadowtMin: 0.1
+  shadowSmooth: 1
+  shadowStr: 1
+  shadowColor: {r: 0.1509434, g: 0, b: 0.046584077, a: 0}
+  distGlowNear: 0
+  distGlowFar: 0
+  distGlowStr: 0
+  normalsWarning: 000000
+  computeNormals0: 1
+  diffuseMap0: {fileID: 0}
+  useAlgoColorDiffuse0: 0
+  diffuseColor0: {r: 1, g: 0.7630411, b: 0.13679248, a: 0}
+  kD0: 0
+  emission0: 5.2
+  specColor0: {r: 1, g: 1, b: 1, a: 0}
+  kS0: 13
+  roughness0: 5
+  kRef0: 0
+  fresnelColor0: {r: 1, g: 1, b: 1, a: 0}
+  fPow0: 7.22
+  kF0: 0
+  doGlow0: 0
+  glowColor0: {r: 1, g: 0.8832997, b: 0.5896226, a: 0}
+  glowCoef0: 0.17
+  glowRemap0: 0.48
+  useAlgoColorGlow0: 0
+  doAoSSS0: 1
+  aoSSSMode0: 1
+  aoSSSSteps0: 10
+  aoSSSDelta0: 2.66
+  aoSSSCoef0: 1
+  aoSSSRemap0: 0.29
+  aoSSSColor0: {r: 0.04350721, g: 0, b: 0.1981132, a: 0}
+  computeNormals1: 0
+  diffuseMap1: {fileID: 0}
+  useAlgoColorDiffuse1: 0
+  diffuseColor1: {r: 0, g: 0, b: 0, a: 0}
+  kD1: 0
+  emission1: 0
+  specColor1: {r: 0, g: 0, b: 0, a: 0}
+  kS1: 0
+  roughness1: 0
+  kRef1: 0
+  fresnelColor1: {r: 0, g: 0, b: 0, a: 0}
+  fPow1: 0
+  kF1: 0
+  doGlow1: 0
+  glowColor1: {r: 0, g: 0, b: 0, a: 0}
+  glowCoef1: 0
+  glowRemap1: 0
+  useAlgoColorGlow1: 0
+  doAoSSS1: 0
+  aoSSSMode1: 0
+  aoSSSSteps1: 0
+  aoSSSDelta1: 0
+  aoSSSCoef1: 0
+  aoSSSRemap1: 0
+  aoSSSColor1: {r: 0, g: 0, b: 0, a: 0}
+  computeNormals2: 0
+  diffuseMap2: {fileID: 0}
+  useAlgoColorDiffuse2: 0
+  diffuseColor2: {r: 0, g: 0, b: 0, a: 0}
+  kD2: 0
+  emission2: 0
+  specColor2: {r: 0, g: 0, b: 0, a: 0}
+  kS2: 0
+  roughness2: 0
+  kRef2: 0
+  fresnelColor2: {r: 0, g: 0, b: 0, a: 0}
+  fPow2: 0
+  kF2: 0
+  doGlow2: 0
+  glowColor2: {r: 0, g: 0, b: 0, a: 0}
+  glowCoef2: 0
+  glowRemap2: 0
+  useAlgoColorGlow2: 0
+  doAoSSS2: 0
+  aoSSSMode2: 0
+  aoSSSSteps2: 0
+  aoSSSDelta2: 0
+  aoSSSCoef2: 0
+  aoSSSRemap2: 0
+  aoSSSColor2: {r: 0, g: 0, b: 0, a: 0}
+  algoColor0: {r: 1, g: 1, b: 1, a: 0}
+  algoColor1: {r: 1, g: 0.9852942, b: 0, a: 0}
+  algoColor2: {r: 0, g: 0, b: 0, a: 0}
+  algoColor3: {r: 0, g: 0, b: 0, a: 0}
+  algoFloat0: 0.05
+  algoFloat1: 19.3
+  algoFloat2: 0.5
+  algoFloat3: 0
+  mi: 0
+  nearClip: 2
+--- !u!114 &534669910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe9d7cb1ff04cb4ebfdc5419755e800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDist: 0.00005
+  maxSteps: 64
+  maxDist: 50
+  eyeResolution: 1
+  computedW: 1162
+  computedH: 518
+  dithering: 1
+  heatMap: 0
+  stereoSeparationFactor: 1
+  cubemap: {fileID: 0}
+  diffuseMapArray: {fileID: 0}
+  alpha: 1
+  fogColor: {r: 0, g: 0, b: 0, a: 1}
+  fogStrength: 1
+  zTest: 0
+  zTestSmooth: 10
+  lt: 0
+  lightPow: 1
+  pointLightTransform: {fileID: 0}
+  doShadow: 1
+  shadowMaxSteps: 13
+  shadowMaxDist: 25
+  shadowtMin: 0.25
+  shadowSmooth: 1
+  shadowStr: 0.98
+  shadowColor: {r: 0, g: 0, b: 0, a: 0}
+  distGlowNear: 0
+  distGlowFar: 0
+  distGlowStr: 0
+  normalsWarning: 000000
+  computeNormals0: 1
+  diffuseMap0: {fileID: 0}
+  useAlgoColorDiffuse0: 0
+  diffuseColor0: {r: 0.7169812, g: 0.33498037, b: 0.050729793, a: 0}
+  kD0: 0
+  emission0: 5.2
+  specColor0: {r: 1, g: 1, b: 1, a: 0}
+  kS0: 13
+  roughness0: 5
+  kRef0: 0
+  fresnelColor0: {r: 1, g: 1, b: 1, a: 0}
+  fPow0: 7.22
+  kF0: 0
+  doGlow0: 1
+  glowColor0: {r: 0.52367747, g: 0.514151, b: 1, a: 0}
+  glowCoef0: 1.11
+  glowRemap0: 0
+  useAlgoColorGlow0: 0
+  doAoSSS0: 1
+  aoSSSMode0: 1
+  aoSSSSteps0: 10
+  aoSSSDelta0: 2.44
+  aoSSSCoef0: 1
+  aoSSSRemap0: 0
+  aoSSSColor0: {r: 0.20143865, g: 0.16905482, b: 0.2735849, a: 0}
+  computeNormals1: 0
+  diffuseMap1: {fileID: 0}
+  useAlgoColorDiffuse1: 0
+  diffuseColor1: {r: 0, g: 0, b: 0, a: 0}
+  kD1: 0
+  emission1: 0
+  specColor1: {r: 0, g: 0, b: 0, a: 0}
+  kS1: 0
+  roughness1: 0
+  kRef1: 0
+  fresnelColor1: {r: 0, g: 0, b: 0, a: 0}
+  fPow1: 0
+  kF1: 0
+  doGlow1: 0
+  glowColor1: {r: 0, g: 0, b: 0, a: 0}
+  glowCoef1: 0
+  glowRemap1: 0
+  useAlgoColorGlow1: 0
+  doAoSSS1: 0
+  aoSSSMode1: 0
+  aoSSSSteps1: 0
+  aoSSSDelta1: 0
+  aoSSSCoef1: 0
+  aoSSSRemap1: 0
+  aoSSSColor1: {r: 0, g: 0, b: 0, a: 0}
+  computeNormals2: 0
+  diffuseMap2: {fileID: 0}
+  useAlgoColorDiffuse2: 0
+  diffuseColor2: {r: 0, g: 0, b: 0, a: 0}
+  kD2: 0
+  emission2: 0
+  specColor2: {r: 0, g: 0, b: 0, a: 0}
+  kS2: 0
+  roughness2: 0
+  kRef2: 0
+  fresnelColor2: {r: 0, g: 0, b: 0, a: 0}
+  fPow2: 0
+  kF2: 0
+  doGlow2: 0
+  glowColor2: {r: 0, g: 0, b: 0, a: 0}
+  glowCoef2: 0
+  glowRemap2: 0
+  useAlgoColorGlow2: 0
+  doAoSSS2: 0
+  aoSSSMode2: 0
+  aoSSSSteps2: 0
+  aoSSSDelta2: 0
+  aoSSSCoef2: 0
+  aoSSSRemap2: 0
+  aoSSSColor2: {r: 0, g: 0, b: 0, a: 0}
+  algoColor0: {r: 1, g: 1, b: 1, a: 0}
+  algoColor1: {r: 1, g: 0.9852942, b: 0, a: 0}
+  algoColor2: {r: 0, g: 0, b: 0, a: 0}
+  algoColor3: {r: 0, g: 0, b: 0, a: 0}
+  algoFloat0: 0.05
+  algoFloat1: 19.3
+  algoFloat2: 0.5
+  algoFloat3: 0
+  mi: 8
+  nearClip: 2
 --- !u!1 &607312355
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 607312357}
@@ -480,7 +657,8 @@ GameObject:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607312355}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -496,12 +674,76 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607312355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!850595691 &1047858709
+LightingSettings:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Settings.lighting
+  serializedVersion: 4
+  m_GIWorkflowMode: 0
+  m_EnableBakedLightmaps: 1
+  m_EnableRealtimeLightmaps: 0
+  m_RealtimeEnvironmentLighting: 1
+  m_BounceScale: 1
+  m_AlbedoBoost: 1
+  m_IndirectOutputScale: 1
+  m_UsingShadowmask: 1
+  m_BakeBackend: 1
+  m_LightmapMaxSize: 512
+  m_BakeResolution: 10
+  m_Padding: 2
+  m_LightmapCompression: 3
+  m_AO: 0
+  m_AOMaxDistance: 1
+  m_CompAOExponent: 1
+  m_CompAOExponentDirect: 0
+  m_ExtractAO: 0
+  m_MixedBakeMode: 2
+  m_LightmapsBakeMode: 1
+  m_FilterMode: 1
+  m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
+  m_ExportTrainingData: 0
+  m_TrainingDataDestination: TrainingData
+  m_RealtimeResolution: 2
+  m_ForceWhiteAlbedo: 0
+  m_ForceUpdates: 0
+  m_FinalGather: 0
+  m_FinalGatherRayCount: 256
+  m_FinalGatherFiltering: 1
+  m_PVRCulling: 1
+  m_PVRSampling: 1
+  m_PVRDirectSampleCount: 32
+  m_PVRSampleCount: 256
+  m_PVREnvironmentSampleCount: 256
+  m_PVREnvironmentReferencePointCount: 2048
+  m_LightProbeSampleCountMultiplier: 4
+  m_PVRBounces: 2
+  m_PVRMinBounces: 2
+  m_PVREnvironmentMIS: 0
+  m_PVRFilteringMode: 2
+  m_PVRDenoiserTypeDirect: 0
+  m_PVRDenoiserTypeIndirect: 0
+  m_PVRDenoiserTypeAO: 0
+  m_PVRFilterTypeDirect: 0
+  m_PVRFilterTypeIndirect: 0
+  m_PVRFilterTypeAO: 0
+  m_PVRFilteringGaussRadiusDirect: 1
+  m_PVRFilteringGaussRadiusIndirect: 5
+  m_PVRFilteringGaussRadiusAO: 2
+  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+  m_PVRFilteringAtrousPositionSigmaIndirect: 2
+  m_PVRFilteringAtrousPositionSigmaAO: 1
+  m_PVRTiledBaking: 0
